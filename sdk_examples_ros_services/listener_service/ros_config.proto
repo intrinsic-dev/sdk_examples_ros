@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ros;
+
+message RosConfig {
+  string  zenoh_router_address = 1;
+  repeated string ros_args = 2;
+}
