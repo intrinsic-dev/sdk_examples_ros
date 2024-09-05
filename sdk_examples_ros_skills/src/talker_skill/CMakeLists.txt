@@ -12,7 +12,10 @@ target_link_libraries(minimal_publisher
 intrinsic_sdk_generate_skill(
   SKILL_NAME talker_skill
   SOURCES talker_skill.proto
-  MANIFEST talker_skill.manifest.textproto)
+  MANIFEST talker_skill.manifest.textproto
+  PROTOS_TARGET talker_skill_protos
+)
+
 
 add_executable(talker_skill_main
   talker_skill.cc

@@ -2,8 +2,8 @@
 
 using std::placeholders::_1;
 
-MinimalSubscriber::MinimalSubscriber()
-: rclcpp::Node("minimal_subscriber")
+MinimalSubscriber::MinimalSubscriber(const rclcpp::NodeOptions & options)
+: rclcpp::Node("minimal_subscriber", options)
 {
   subscription_ = this->create_subscription<std_msgs::msg::String>(
     "topic", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
