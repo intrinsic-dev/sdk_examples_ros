@@ -1,3 +1,4 @@
+// this is a comment
 syntax = "proto3";
 
 package ros;

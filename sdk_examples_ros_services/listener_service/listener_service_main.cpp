@@ -35,8 +35,10 @@ void StartZenohBridge(const std::string & zenoh_router_address) {
 
 int main(int argc, char * argv[])
 {
-  auto runtime_context = GetRuntimeContext();
+  (void) argc;
+  (void) argv;
 
+  auto runtime_context = GetRuntimeContext();
   ros::RosConfig ros_config;
   if (!runtime_context.config().UnpackTo(&ros_config)) {
       return 1;

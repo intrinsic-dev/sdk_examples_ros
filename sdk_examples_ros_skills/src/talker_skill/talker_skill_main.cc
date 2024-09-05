@@ -17,7 +17,6 @@
 // clang-format off
 #include "talker_skill.hh"
 // clang-format on
-#include "rclcpp/rclcpp.hpp"
 
 
 ABSL_FLAG(int32_t, port, 8001, "Port to serve gRPC on.");
