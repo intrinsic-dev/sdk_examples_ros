@@ -16,10 +16,22 @@ intrinsic_sdk_generate_skill(
   PROTOS_TARGET talker_skill_protos
 )
 
+# Generate the main function for this skill
+intrinsic_sdk_skill_main(
+  SKILL_NAME talker_skill
+  CREATE_SKILL_HEADER talker_skill.hh
+  CREATE_SKILL_FUNCTION "::TalkerSkill::CreateSkill"
+  MAIN_FILE ${CMAKE_CURRENT_BINARY_DIR}/talker_skill_main.cpp
+)
 
 add_executable(talker_skill_main
   talker_skill.cc
-  talker_skill_main.cc
+  ${CMAKE_CURRENT_BINARY_DIR}/talker_skill_main.cpp
+)
+
+target_include_directories(talker_skill_main
+  PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_link_libraries(talker_skill_main
@@ -35,6 +47,7 @@ install(
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/talker_skill_skill_config.pbbin
-        DESTINATION "share/${PROJECT_NAME}"
+install(
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/talker_skill_skill_config.pbbin
+  DESTINATION "share/${PROJECT_NAME}"
 )
