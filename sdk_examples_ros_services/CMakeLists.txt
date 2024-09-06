@@ -12,7 +12,12 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 
+find_package(rclcpp_components REQUIRED)
+find_package(sdk_examples_ros_interfaces REQUIRED)
+find_package(cv_bridge REQUIRED)
+
 add_subdirectory(listener_service)
+add_subdirectory(feature_detector)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

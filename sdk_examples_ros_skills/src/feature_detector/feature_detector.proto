@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ai.intrinsic.sdk_examples_ros;
+
+import "intrinsic/math/proto/pose.proto";
+
+message FeatureDetectorSkillParams {
+  // Service to call
+  string service = 1;
+
+  // Timeout for service call
+  uint64 service_timeout_ms = 2;
+}
+
+message Feature
+{
+  uint64 id = 1;
+  intrinsic_proto.Pose pose = 2;
+}
+
+message FeatureDetectorSkillResult {
+  repeated Feature feature = 1;
+}

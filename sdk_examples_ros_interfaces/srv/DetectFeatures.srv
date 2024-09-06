@@ -1,0 +1,4 @@
+sensor_msgs/Image image
+sensor_msgs/CameraInfo camera_info
+---
+sdk_examples_ros_interfaces/DetectionResult[] detections

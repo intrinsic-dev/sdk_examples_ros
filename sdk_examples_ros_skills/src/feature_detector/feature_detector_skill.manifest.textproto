@@ -1,0 +1,31 @@
+id {
+  package: "ai.intrinsic"
+  name: "feature_detector_skill"
+}
+display_name: "ROS-Based Feature Detector"
+vendor {
+  display_name: "Intrinsic ROS Example"
+}
+documentation {
+  description: "Skill that connects to a camera resource and detects features using a ROS node."
+}
+options {
+  supports_cancellation: true
+  cc_config {
+    create_skill: "::feature_detector::FeatureDetector::CreateSkill"
+  }
+}
+dependencies {
+  required_equipment {
+    key: "camera"
+    value {
+      capability_names: "CameraConfig"
+    }
+  }
+}
+parameter {
+  message_full_name: "ai.intrinsic.sdk_examples_ros.FeatureDetectorSkillParams"
+}
+return_type {
+  message_full_name: "ai.intrinsic.sdk_examples_ros.FeatureDetectorSkillResult"
+}
