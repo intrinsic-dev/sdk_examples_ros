@@ -1,0 +1,25 @@
+id {
+  package: "com.example"
+  name: "talker_skill"
+}
+display_name: "Simple ROS Talker"
+vendor {
+  display_name: "Intrinsic ROS Example"
+}
+documentation {
+  description: "Skill that contains a ROS publisher."
+}
+options {
+  supports_cancellation: true
+  cc_config {
+    create_skill: "::TalkerSkill::CreateSkill"
+  }
+}
+dependencies {
+}
+parameter {
+  message_full_name: "com.example.TalkerSkillParams"
+}
+return_type {
+  message_full_name: "com.example.TalkerSkillResult"
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.example;
+
+message TalkerSkillParams {
+  // Service to call
+  string message = 1;
+}
+
+message TalkerSkillResult {
+}
